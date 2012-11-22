@@ -9,5 +9,8 @@
 	WebTools - CodeGenerationService / cgs
 </h1>
 
+<ul>
+    <li><a href="doc">docs</a></li>
+</ul>
 </body>
 </html>

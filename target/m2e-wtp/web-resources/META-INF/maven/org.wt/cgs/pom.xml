@@ -134,8 +134,6 @@
 		    <groupId>ar.com.hjg</groupId>
 		    <artifactId>pngj</artifactId>
             <version>1.0.0</version>
-		    <scope>system</scope>
-		    <systemPath>${project.basedir}/lib/pngj.jar</systemPath>
 		</dependency>
                     
 	</dependencies>
