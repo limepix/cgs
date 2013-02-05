@@ -142,7 +142,7 @@
 		<pre>http://cgs.server.de/qr?type=TEXT&amp;content=foo&amp;size=64</pre>
 		<img src="${pageContext.request.contextPath}/qr?type=TEXT&amp;content=foo&amp;size=64"/>
 		<br>
-		<i style="color:red;">cgs will automatically adjust (increase) the size, when there is too much information an the qr is not big enough</i>
+		<i style="color:red;">cgs will automatically adjust (increase) the size, when there is too much information and the qr image is not big enough</i>
 	</div>
 </body>
 </html>

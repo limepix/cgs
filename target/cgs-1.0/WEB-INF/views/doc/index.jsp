@@ -1,7 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%@ page session="false" %><!DOCTYPE html>
+<html lang="en-us">
 <head>
+	<meta charset="utf-8">
     <title>cgs docs</title>
 </head>
 <body>
@@ -10,7 +10,7 @@
 	</h1>
 	
 	<hr>	
-	<p>
+	<div>
        <h3>type: TEXT</h3>
        Parameter:
        <ul>
@@ -20,11 +20,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=TEXT&amp;content=foo</pre>
        <img src="${pageContext.request.contextPath}/qr?type=TEXT&amp;content=foo"/>
-	</p>
+	</div>
     
     <hr>
 	
-	<p>
+	<div>
 	   <h3>type: URL</h3>
 	   Parameter:
 	   <ul>
@@ -34,11 +34,11 @@
 	   Example:
        <pre>http://cgs.server.de/qr?type=URL&amp;url=www.google.com</pre>
        <img src="${pageContext.request.contextPath}/qr?type=URL&amp;url=www.google.com"/>
-	</p>
+	</div>
 	
 	<hr>
 	
-	<p>
+	<div>
 	   <h3>type: WIFI</h3>
 	   Parameter:
 	   <ul>
@@ -50,11 +50,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=WIFI&amp;ssid=fritzbox&amp;wifitype=WPA&amp;password=123</pre>
        <img src="${pageContext.request.contextPath}/qr?type=WIFI&amp;ssid=fritzbox&amp;wifitype=WPA&amp;password=123"/>
-	</p>
+	</div>
     
     <hr>
     
-    <p>
+    <div>
        <h3>type: SMS</h3>
        Parameter:
        <ul>
@@ -65,11 +65,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=SMS&amp;number=01701231235&amp;message=testmessagecontent</pre>
        <img src="${pageContext.request.contextPath}/qr?type=SMS&amp;number=01701231235&amp;message=testmessagecontent"/>
-    </p>
+    </div>
     
     <hr>
     
-    <p>
+    <div>
        <h3>type: PHONE</h3>
        Parameter:
        <ul>
@@ -79,11 +79,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=PHONE&amp;number=01701231235</pre>
        <img src="${pageContext.request.contextPath}/qr?type=PHONE&amp;number=01701231235"/>
-    </p>
+    </div>
     
     <hr>
     
-    <p>
+    <div>
        <h3>type: GEOLOCATION</h3>
        Parameter:
        <ul>
@@ -95,11 +95,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=GEOLOCATION&amp;latitude=49.47253&amp;longitude=11.064111&amp;query=pizza</pre>
        <img src="${pageContext.request.contextPath}/qr?type=GEOLOCATION&amp;latitude=49.47253&amp;longitude=11.064111&amp;query=pizza"/>
-    </p>
+    </div>
     
     <hr>
     
-    <p>
+    <div>
        <h3>type: MAIL</h3>
        Parameter:
        <ul>
@@ -109,11 +109,11 @@
        Example:
        <pre>http://cgs.server.de/qr?type=MAIL&amp;address=mr.foo@bar.com</pre>
        <img src="${pageContext.request.contextPath}/qr?type=MAIL&amp;address=mr.foo@bar.com"/>
-    </p>
+    </div>
     
     <hr>
     
-    <p>
+    <div>
        <h3>type: CONTACT</h3>
        Parameter:
        <ul>
@@ -131,16 +131,18 @@
        Example:
        <pre>http://cgs.server.de/qr?type=CONTACT&amp;name=Max Mustermann&amp;title=IT Specialist&amp;company=Google Inc.&amp;phone=01701231235&amp;mail=max.mustermann@google.com&amp;address=1600 Amphitheatre Parkway&amp;address2=Mountain View, CA 94043&amp;web=http://www.google.com&amp;note=fakeaccount</pre>
        <img src="${pageContext.request.contextPath}/qr?type=CONTACT&amp;name=Max Mustermann&amp;title=IT Specialist&amp;company=Google Inc.&amp;phone=01701231235&amp;mail=max.mustermann@google.com&amp;address=1600 Amphitheatre Parkway&amp;address2=Mountain View, CA 94043&amp;web=http://www.google.com&amp;note=fakeaccount"/>
-    </p>
+    </div>
     
     <hr>
     
-    <h3>Optional Parameter for all types:</h3> 
-    <pre>size</pre>
-    Example:
-    <pre>http://cgs.server.de/qr?type=TEXT&amp;content=foo&size=64</pre>
-    <img src="${pageContext.request.contextPath}/qr?type=TEXT&amp;content=foo&size=64"/>
-    <br>
-    <i style="color:red;">cgs will automatically adjust (increase) the size, when there is too much information an the qr is not big enough</i>
+	<div style="background:#eee;">
+		<h3>Optional Parameter for all types:</h3> 
+		<pre>size</pre>
+		Example:
+		<pre>http://cgs.server.de/qr?type=TEXT&amp;content=foo&amp;size=64</pre>
+		<img src="${pageContext.request.contextPath}/qr?type=TEXT&amp;content=foo&amp;size=64"/>
+		<br>
+		<i style="color:red;">cgs will automatically adjust (increase) the size, when there is too much information and the qr image is not big enough</i>
+	</div>
 </body>
 </html>
