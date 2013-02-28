@@ -85,12 +85,12 @@ public class RenderService {
 	    int iS = scale;
 	    int border;
 	    
-	    //Hier wird nun die maximal mˆgliche Skalierung f¸r den QR Code ermittelt
-	    //Der Rest der dann noch ¸brig bleibt, wird mit WHITE Pixeln aufgef¸llt.
+	    //Hier wird nun die maximal m√∂gliche Skalierung f√ºr den QR Code ermittelt
+	    //Der Rest der dann noch √ºbrig bleibt, wird mit WHITE Pixeln aufgef√ºllt.
 	    while(true){
 	    	iS++;
 	    	if(iS%2!=0) continue; //es werden keine ungeraden Skalierungen 
-	    						  //genommen -> Das f¸hrt zu Verzerrungen!
+	    						  //genommen -> Das f√ºhrt zu Verzerrungen!
 	    	if(iS * cols > size)
 	    		break;
 	    	else
@@ -101,8 +101,8 @@ public class RenderService {
 
 	    logger.debug("requested size:             " + size);
 	    
-	    //Mindesgrˆﬂe festsetzen! minPixelPerBit muss sicher gestellt werden!
-	    // -> ACHTUNG: Dadurch kann das Bild grˆﬂer werden, als der User mˆchte!
+	    //Mindesgr√∂√üe festsetzen! minPixelPerBit muss sicher gestellt werden!
+	    // -> ACHTUNG: Dadurch kann das Bild gr√∂√üer werden, als der User m√∂chte!
 	    if(size < qrSize){
 	    	size = qrSize;
 	    }
@@ -130,7 +130,7 @@ public class RenderService {
 	    	line.incRown();
 	    	
 	    	if(i < border){
-	    		//oberer Rand - wird mit WHITE gef¸llt
+	    		//oberer Rand - wird mit WHITE gef√ºllt
 	    		for (int j = 0; j < size; j++) {
 		    		ImageLineHelper.setValD(line, (j * channels), WHITE);
 		    	}
@@ -140,7 +140,7 @@ public class RenderService {
 		    	
 		    	for (int j = 0; j < size; j++) {
 		    		if(j < border){
-		    			//linker Rand - wird mit WHITE gef¸llt
+		    			//linker Rand - wird mit WHITE gef√ºllt
 		    			ImageLineHelper.setValD(line, (j * channels), WHITE);
 		    		}		    		
 		    		else if(j < qrSize + border){
@@ -154,13 +154,13 @@ public class RenderService {
 			    		ImageLineHelper.setValD(line, (j * channels), color);
 		    		}
 		    		else{
-		    			//rechter Rand - wird mit WHITE gef¸llt
+		    			//rechter Rand - wird mit WHITE gef√ºllt
 		    			ImageLineHelper.setValD(line, (j * channels), WHITE);
 		    		}		    		
 		    	}
 	    	}
 	    	else{
-	    		//unterer Rand - wird mit WHITE gef¸llt
+	    		//unterer Rand - wird mit WHITE gef√ºllt
 	    		for (int j = 0; j < size; j++) {
 		    		ImageLineHelper.setValD(line, (j * channels), WHITE);
 		    	}		    	

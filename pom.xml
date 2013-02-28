@@ -135,7 +135,7 @@
 		    <artifactId>pngj</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-        <systemPath>${project.basedir}/lib/pngj.jar</systemPath>
+            <systemPath>${project.basedir}/lib/pngj.jar</systemPath>
 		</dependency>
                     
 	</dependencies>
@@ -155,6 +155,19 @@
                     <downloadJavadocs>true</downloadJavadocs>
                 </configuration>
             </plugin>
+            <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>2.3</version>
+		        <configuration>
+		          <webResources>
+		            <resource>
+		              <directory>lib</directory>
+		              <targetPath>WEB-INF/lib</targetPath>
+		            </resource>
+		          </webResources>
+		        </configuration>
+		    </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

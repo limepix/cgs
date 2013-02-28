@@ -11,16 +11,16 @@ import org.springframework.stereotype.Service;
  * 
  * @author jb
  * 
- * Diese Klasse generiert Textinhalte die in QR Codes verpackt werden kšnnen.
+ * Diese Klasse generiert Textinhalte die in QR Codes verpackt werden kÃ¶nnen.
  * Der enum QR_TYPE zeigt, welche unterschiedlichen Arten von QR Codes
- * generiert werden können. Für jeden Typ gibt es eine Methode, die den 
- * entsprechend aufbereiteten Text zurück liefert.
+ * generiert werden kÃ¶nnen. FÃ¼r jeden Typ gibt es eine Methode, die den 
+ * entsprechend aufbereiteten Text zurÃ¼ck liefert.
  */
 @Service
 public class QrGeneratorService {
 	private static final Logger logger = LoggerFactory.getLogger(QrGeneratorService.class);
 	
-	//Für die Email Validierung
+	//FÃ¼r die Email Validierung
 	private static final Pattern rfc2822 = Pattern.compile(
 	        "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
 	);
@@ -42,10 +42,10 @@ public class QrGeneratorService {
 	 * @param params - Die Request Map eines HttpServletRequests
 	 * 
 	 * @return null, wenn Parameter fehlen, oder diese nicht korrekt waren 
-	 * (Bsp: Ungültige Mail Adresse)
+	 * (Bsp: UngÃ¼ltige Mail Adresse)
 	 * 
-	 * Oder liefert den "kodierten" / formatierten String zurück, der dann an
-	 * das Rendering für den QR-Code gegeben werden kann 
+	 * Oder liefert den "kodierten" / formatierten String zurÃ¼ck, der dann an
+	 * das Rendering fÃ¼r den QR-Code gegeben werden kann 
 	 */
 	public String generate(QR_TYPE type, Map<String, String[]> params){
 		logger.debug("generating text for type " + type);
@@ -78,8 +78,8 @@ public class QrGeneratorService {
 			logger.warn("requested type of qr image is not supported. type: " + type);
 		}
 				
-		/*Wenn noch nichts zurück gegeben wurde, wurden falsche, oder nicht alle
-		Parameter übergeben */
+		/*Wenn noch nichts zurÃ¼ck gegeben wurde, wurden falsche, oder nicht alle
+		Parameter Ã¼bergeben */
 		return null;		
 	}
 	
@@ -157,7 +157,7 @@ public class QrGeneratorService {
 	
 	/**
 	 * number - an wen die sms geschickt werden soll
-	 * message (optional) - wenn schon ein text vorgefüllt werden soll 
+	 * message (optional) - wenn schon ein text vorgefÃ¼llt werden soll 
 	 */
 	private String generateSMS(Map<String, String[]> params){
 		String number = getFirstValue("number", params);
@@ -194,7 +194,7 @@ public class QrGeneratorService {
 	/**
 	 * latitude
 	 * longitude
-	 * query (optional) - suche die an der stelle ausgeführt werden soll 
+	 * query (optional) - suche die an der stelle ausgefÃ¼hrt werden soll 
 	 */
 	private String generateGeoLocation(Map<String, String[]> params){
 		String latitude  = getFirstValue("latitude", params);
@@ -223,8 +223,8 @@ public class QrGeneratorService {
 	/**
 	 * address - an wenn eine mail geschickt werden soll
 	 * 
-	 * generateMail kann auch dann null zurück liefern, wenn die mail adresse
-	 * ungültig ist.
+	 * generateMail kann auch dann null zurÃ¼ck liefern, wenn die mail adresse
+	 * ungueltig ist.
 	 */
 	private String generateMail(Map<String, String[]> params){
 		String address  = getFirstValue("address", params);
@@ -234,7 +234,7 @@ public class QrGeneratorService {
 			return null;
 		}
 
-		if (!rfc2822.matcher(address).matches()) {
+		if (!rfc2822.matcher(address.toLowerCase()).matches()) {
 		    logger.warn("invalid email address: " + address);
 		    return null;
 		}
@@ -253,7 +253,7 @@ public class QrGeneratorService {
 	 * web (optional)
 	 * note (optional)
 	 * 
-	 * ist die email adresse ungültig, wird sie einfach weg gelassen. 
+	 * ist die email adresse ungÃ¼ltig, wird sie einfach weg gelassen. 
 	 */
 	private String generateContact(Map<String, String[]> params){
 		String name  = getFirstValue("name", params);
@@ -333,7 +333,7 @@ public class QrGeneratorService {
 	// HELPER
 	
 	/**
-	 * Liefert den ersten Wert aus der Map params an der Stelle key zurück.
+	 * Liefert den ersten Wert aus der Map params an der Stelle key zurÃ¼ck.
 	 * 
 	 * @param key
 	 * @param params
