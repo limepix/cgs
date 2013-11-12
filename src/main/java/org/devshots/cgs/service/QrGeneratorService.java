@@ -1,4 +1,4 @@
-package org.wt.cgs.service;
+package org.devshots.cgs.service;
 
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -146,11 +146,9 @@ public class QrGeneratorService {
 		}
 		
 		if(!containsText(password)){
-			System.out.println("WIFI:S:" + ssid + ";T:" + wifitype +";;");
 			return "WIFI:S:" + ssid + ";T:" + wifitype +";;";
 		}
 		else{
-			System.out.println("WIFI:S:" + ssid + ";T:" + wifitype +";P:" + password + ";;");
 			return "WIFI:S:" + ssid + ";T:" + wifitype +";P:" + password + ";;";
 		}
 	}

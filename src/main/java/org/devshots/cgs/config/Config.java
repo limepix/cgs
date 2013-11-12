@@ -1,4 +1,4 @@
-package org.wt.cgs.config;
+package org.devshots.cgs.config;
 
 public class Config {
 	private int defaultSize = 0;

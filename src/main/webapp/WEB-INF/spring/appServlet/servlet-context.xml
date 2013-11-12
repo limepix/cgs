@@ -21,11 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="org.wt.cgs" />
+	<context:component-scan base-package="org.devshots.cgs" />
 	
 	<context:property-placeholder location="classpath:cgs.properties" />
 	
-    <beans:bean name="config" class="org.wt.cgs.config.Config">
+    <beans:bean name="config" class="org.devshots.cgs.config.Config">
         <beans:property name="defaultSize" value="${cgs.qr.image.defaultsize}" />
         <beans:property name="minPixelPerBit" value="${cgs.qr.image.minpixelperbit}" />
     </beans:bean>

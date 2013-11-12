@@ -1,4 +1,4 @@
-package org.wt.cgs.controller;
+package org.devshots.cgs.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.wt.cgs.config.Config;
-import org.wt.cgs.service.QrGeneratorService;
-import org.wt.cgs.service.RenderService;
-import org.wt.cgs.service.QrGeneratorService.QR_TYPE;
+import org.devshots.cgs.config.Config;
+import org.devshots.cgs.service.QrGeneratorService;
+import org.devshots.cgs.service.RenderService;
+import org.devshots.cgs.service.QrGeneratorService.QR_TYPE;
 
 @Controller
 public class RenderController {
